@@ -1,0 +1,17 @@
+{
+  "name": "ux-console-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "author": {
+    "name": "Paulo Salazar"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "sqlite3": "^4.2.0",
+    "xlsx": "^0.16.0"
+  }
+}
