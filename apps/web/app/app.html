@@ -9,9 +9,34 @@
     <link href="style/reset.css" rel="stylesheet">
     <link href="style/core.css" rel="stylesheet">
 
+    <style type="text/css">
+
+    </style>
+
+    <script type="application/javascript">
+
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            alert('dark');
+            // dark mode
+        }
+        else {
+            alert('no dark');
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+
+            const newColorScheme = e.matches ? "dark" : "light";
+            alert(newColorScheme);
+        });
+
+
+
+    </script>
 </head>
 <body>
     REbk (Rebeca) v.3.0
-    <script src="app.js"></script>
+    <script src="app.js">
+
+    </script>
 </body>
 </html>
