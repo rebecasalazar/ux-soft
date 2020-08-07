@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REbk</title>
@@ -13,30 +14,103 @@
 
     </style>
 
-    <script type="application/javascript">
+</head>
+<body style="padding: 20px;">
+    PENDIENTES (2020-AUG-07)<br>
+    <script src="app.js">
+    </script>
+    <table>
+        <tr>
+            <td>00. Bug receiving - TRUE GRADE</td>
+        </tr>
+        <tr>
+            <td>01. Preparara reunion Rosamina - ROSAMINA</td>
+        </tr>
+        <tr>
+            <td>02. Definir modelo de multi company definitivo - TRUE GRADE</td>
+        </tr>
+        <tr>
+            <td>03. Proteger el recieving con un setting que obligue o no a meter pack si no hay y handling units - TRUE GRADE</td>
+        </tr>
+        <tr>
+            <td>04. Seguimiento - CARMEL</td>
+        </tr>
+        <tr>
+            <td>05. Seguimiento (Campos, Bugs, Cierre ciclo IO) - CAPIRO</td>
+        </tr>
+        <tr>
+            <td>06. Perceptual - PERCEPTUAL</td>
+        </tr>
+        <tr>
+            <td>07. Reunion con Sebas Market Place y solucion inner pack - DWF</td>
+        </tr>
+        <tr>
+            <td>08. Allocation por partes en el market place - KENDAL</td>
+        </tr>
+        <tr>
+            <td>09. Recibir en buckets lo de work orders - KENDAL</td>
+        </tr>
+        <tr>
+            <td>10. Arreglar performance de Allocations - KENDAL</td>
+        </tr>
+        <tr>
+            <td>11. Revisar funcionalidad listing - TRUE GRADE</td>
+        </tr>
+        <tr>
+            <td>12. Hacer balances de inventario - GENERAL</td>
+        </tr>
+    </table>
+    <br><br><br>
+    PERSONAL
+    <table>
+        <tr>
+            <td>01. Facturas Traze</td>
+        </tr>
+        <tr>
+            <td>02. Crear Empresa Colombia</td>
+        </tr>
+    </table>
+</body>
+<script type="application/javascript">
 
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            alert('dark');
-            // dark mode
+    let body = document.querySelector('body');
+
+    debugger;
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+
+        body.style.backgroundColor = '#3b3b3b';
+        body.style.color= '#fcfcfc';
+
+        // alert('dark');
+        // dark mode
+    }
+    else {
+
+        body.style.backgroundColor = '#f2f2f2';
+        body.style.color= 'black';
+
+        // alert('no dark');
+    }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+
+        const newColorScheme = e.matches ? "dark" : "light";
+
+        debugger;
+
+        if (newColorScheme === 'dark') {
+            body.style.backgroundColor = '#3b3b3b';
+            body.style.color= '#fcfcfc';
         }
         else {
-            alert('no dark');
+            body.style.backgroundColor = '#f2f2f2';
+            body.style.color= 'black';
         }
 
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
 
-            const newColorScheme = e.matches ? "dark" : "light";
-            alert(newColorScheme);
-        });
+        // alert(newColorScheme);
+    });
 
-
-
-    </script>
-</head>
-<body>
-    REbk (Rebeca) v.3.0
-    <script src="app.js">
-
-    </script>
-</body>
+</script>
 </html>
