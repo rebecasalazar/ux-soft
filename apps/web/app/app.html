@@ -12,40 +12,69 @@
 
     <style type="text/css">
 
+        li, td {
+            color: darkgrey;
+        }
+
+        .done {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .today {
+            font-weight: bolder;
+            color: white;
+        }
     </style>
 
 </head>
 <body style="padding: 20px;">
-    PENDIENTES (2020-AUG-07)<br>
+    PENDIENTES (2020-SEP)<br>
     <script src="app.js">
     </script>
     <ul>
         <li>TRUE GRADE</li>
         <ul>
-            <li>Bug - appCompanyId vs OwnerCompanyId en trading transactions</li>
-            <li>Bug - Consecutives (con prefijos, y numeracion)</li>
+            <li class="done">Arrgelar vistas de inventario,storage y lots con costos bien calculados</li>
+            <li class="done">Bug - appCompanyId vs OwnerCompanyId en trading transactions</li>
+            <li class="today">Consecutives (con prefijos, y numeracion)</li>
             <li>Bug - No salva la compañia en vista de UI (validacion de duplicidad de nombres en grid)</li>
             <li>Bug - Cuando se mete un campo nuevo en un search y este tiene una vista default, no lo esta mostrando en columns mgr.</li>
             <li>Sincronizar entre tabs cuando se cambia de suscripcion y/o appCompany</li>
-            <li>Arreglar historia</li>
+            <li class="today">Arreglar historia POs</li>
+            <li>El copiado de ordenes saca error por sequence global</li>
 
-            <li>Bug - creacion inventario inbound en receiving (bloquear, obligar a meter pack, arreglar refresh en UI)</li>
+            <li class="done">Bug - creacion inventario inbound en receiving (bloquear, obligar a meter pack, arreglar refresh en UI)</li>
             <li>Tabla para quemar lots-storageUnits por performance</li>
-            <li>Solucionar fulfillment de shipment con nuevo modelo de activity en sources (fulfillShipmentItems)</li>
+            <li>Solucionar fulfillment de shipment con nuevo modelo de activity en sources (fulfillShipmentItems) con Bayron</li>
 
             <li>Extender funcionalidad del listing (Automatico)</li>
+        </ul>
+        <br/>
+
+        <li>ELITE</li>
+        <ul>
+            <li class="today">Revisar Agreement</li>
+        </ul>
+        <br/>
+
+        <li>KOHLER</li>
+        <ul>
+            <li class="done">Liquidacion / Facturacion</li>
+            <li class="today">Ajustes Liquidacion / Facturacion con Decimales y Formato PDF</li>
         </ul>
         <br/>
 
         <li>CAPIRO</li>
         <ul>
             <li>Bug - reallocation customer</li>
+            <li class="done">Bug - balances - solucion modelo generico de save para modificar solo algunos campos</li>
         </ul>
         <br/>
 
         <li>JOLO</li>
         <ul>
-            <li>Bloquear usar producto que ya esta en pallet staging en input de WO.</li>
+            <li class="today">Bloquear usar producto que ya esta en pallet staging en input de WO.</li>
             <li>Bug - Work order consumptions</li>
             <li>Arreglar References de product designs que estan en texto y no estan numericos</li>
         </ul>
@@ -83,7 +112,7 @@
         <ul>
             <li>Borrar unidades de medida creadas por usuarios y estandarizar</li>
             <li>Arreglar Componente en Product Design</li>
-            <li>Hacer modelo de unidades de medida suelto del ID de trazepara integraciones con terceros</li>
+            <li>Hacer modelo de unidades de medida suelto del ID de traze para integraciones con terceros</li>
             <li>Borrar Allocation por partes</li>
             <li>Arreglar modelo y performance de Core Shared Entities (vw_core_shared_measureUnits)</li>
             <li>Quitar el modelo de appbus que ejecuta pre y post (es un enredo)</li>
@@ -91,20 +120,16 @@
         <br/>
 
     </ul>
-    <br/><br/>
     PERSONAL
     <table>
         <tr>
-            <td>01. Comprar Eliptica</td>
+            <td class="today">01. Cobrar Facturas Traze</td>
         </tr>
         <tr>
-            <td>02. Comprar Mesa Laptop</td>
+            <td>02. Crear Empresa Colombia (Documento de creacion y estatutos)</td>
         </tr>
         <tr>
-            <td>03. Cobrar Facturas Traze</td>
-        </tr>
-        <tr>
-            <td>04. Crear Empresa Colombia (Documento de creacion y estatutos)</td>
+            <td>03. Comprar Eliptica</td>
         </tr>
     </table>
 </body>
