@@ -12,139 +12,202 @@
 
     <style type="text/css">
 
-        li, td {
-            color: darkgrey;
+        /*li, td {*/
+        /*    color: darkgrey;*/
+        /*}*/
+
+        /*.done {*/
+        /*    text-decoration: line-through;*/
+        /*    color: gray;*/
+        /*}*/
+
+        /*.today {*/
+        /*    font-weight: bolder;*/
+        /*    color: white;*/
+        /*}*/
+
+        /*Remove default bullets */
+        ul, #myUL {
+            list-style-type: none;
         }
 
-        .done {
-            text-decoration: line-through;
-            color: gray;
+        /* Remove margins and padding from the parent ul */
+        #myUL {
+            margin: 0;
+            padding: 0;
         }
 
-        .today {
-            font-weight: bolder;
-            color: white;
+        /* Style the caret/arrow */
+        .caret {
+            cursor: pointer;
+            user-select: none; /* Prevent text selection */
         }
+
+        /* Create the caret/arrow with a unicode, and style it */
+        .caret::before {
+            content: "\25B6";
+            color: black;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+        .caret-down::before {
+            transform: rotate(90deg);
+        }
+
+        /* Hide the nested list */
+        .nested {
+            display: none;
+        }
+
+        /* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+        .active {
+            display: block;
+        }
+
     </style>
+
 
 </head>
 <body style="padding: 20px;">
-    PENDIENTES (2020-SEP)<br>
-    <script src="app.js">
-    </script>
-    <ul>
-        <li>TRUE GRADE</li>
-        <ul>
-            <li class="done">Arrgelar vistas de inventario,storage y lots con costos bien calculados</li>
-            <li class="done">Bug - appCompanyId vs OwnerCompanyId en trading transactions</li>
-            <li class="today">Consecutives (con prefijos, y numeracion)</li>
-            <li>Bug - No salva la compañia en vista de UI (validacion de duplicidad de nombres en grid)</li>
-            <li>Bug - Cuando se mete un campo nuevo en un search y este tiene una vista default, no lo esta mostrando en columns mgr.</li>
-            <li>Sincronizar entre tabs cuando se cambia de suscripcion y/o appCompany</li>
-            <li class="today">Arreglar historia POs</li>
-            <li>El copiado de ordenes saca error por sequence global</li>
-            <li>Arreglar PO con problema de recibo</li>
 
-            <li class="done">Bug - creacion inventario inbound en receiving (bloquear, obligar a meter pack, arreglar refresh en UI)</li>
-            <li>Tabla para quemar lots-storageUnits por performance</li>
-            <li>Solucionar fulfillment de shipment con nuevo modelo de activity en sources (fulfillShipmentItems) con Bayron</li>
+    <p>PENDIENTES</p><br>
 
-            <li>Extender funcionalidad del listing (Automatico)</li>
-            <li>Extender funcionalidad del listing (Automatico)</li>
-        </ul>
-        <br/>
+    <ul id="myUL">
+        <li><span class="caret">TRUE GRADE</span>
+            <ul class="nested">
+                <li class="today">Consecutives (con prefijos, y numeracion)</li>
+                <li class="today">Arreglar historia de POs e Items con FullNumber</li>
+                <li>Arreglar PO con problema de recibo</li>
 
-        <li>ELITE</li>
-        <ul>
-            <li class="today">Revisar Agreement</li>
-        </ul>
-        <br/>
+                <li>Bug - No salva la compañia en vista de UI (validacion de duplicidad de nombres en grid)</li>
+                <li>Bug - Cuando se mete un campo nuevo en un search y este tiene una vista default, no lo esta mostrando en columns mgr.</li>
+                <li>Sincronizar entre tabs cuando se cambia de suscripcion y/o appCompany</li>
 
-        <li>KOHLER</li>
-        <ul>
-            <li class="done">Liquidacion / Facturacion</li>
-            <li class="done">Decimales en Liquidacion</li>
-            <li class="today">Formato PDF</li>
-        </ul>
-        <br/>
+                <li>El copiado de ordenes saca error por sequence global</li>
 
-        <li>CAPIRO</li>
-        <ul>
-            <li class="today">Bug - WO. cuando hay permisos aplicados</li>
-            <li>Bug - reallocation customer</li>
-            <li class="done">Bug - balances - solucion modelo generico de save para modificar solo algunos campos</li>
-        </ul>
-        <br/>
+                <li class="done">Bug - creacion inventario inbound en receiving (bloquear, obligar a meter pack, arreglar refresh en UI)</li>
+                <li>Tabla para quemar lots-storageUnits por performance</li>
+                <li>Solucionar fulfillment de shipment con nuevo modelo de activity en sources (fulfillShipmentItems) con Bayron</li>
 
-        <li>JOLO</li>
-        <ul>
-            <li class="today">Expiry date - digit to letter</li>
-            <li class="today">En allocation tracking o allocation sources, poner un icono en workorder que abre y muestra el input de la vista de allocation sources de este</li>
-            <li class="done">Bloquear usar producto que ya esta en pallet staging en input de WO.</li>
-            <li class="today">Bug - filtros work orders (search by customer) y cuando aplica status, o cuando hay permisos aplicados</li>
-            <li>Bug - Work order consumptions</li>
-            <li>Arreglar References de product designs que estan en texto y no estan numericos</li>
-        </ul>
-        <br/>
+                <li>Extender funcionalidad del listing (Automatico)</li>
 
-        <li>DWF</li>
-        <ul>
-            <li>Apoyo, seguimiento, borrado, definicion productos y proceso compra.</li>
-            <li>Market Place y solucion inner pack definitiva</li>
-        </ul>
-        <br/>
+                <li>Los Autocomplete usan queries de entidades, cuando uno no tiene permiso a esa entidad del autocomplete,
+                    la va a dejar vacia asi exista, y no es la realidad</li>
 
-        <li>AIR-SEA-TRANS</li>
-        <ul>
-            <li>Bug cargos carrier y agent</li>
-        </ul>
-        <br/>
+                <li class="done">Arreglar vistas de inventario, storage y lots con costos bien calculados</li>
+                <li class="done">Bug - appCompanyId diferente a OwnerCompanyId en trading transactions</li>
+            </ul>
+        </li>
 
-        <li>KENDALL + OTHER CUSTOMERS</li>
-        <ul>
-            <li>Allocation automatico por partes en market place</li>
-            <li>Completear work order en handling units (buckets)</li>
-            <li>Reporte Balances de Flor</li>
-        </ul>
-        <br/>
+        <li><span class="caret">ELITE</span>
+            <ul class="nested">
+                <li class="today">Revisar Agreement</li>
+            </ul>
+        </li>
 
-        <li>KRUEGER</li>
-        <ul>
-            <li>Prototipos Mobile</li>
-        </ul>
-        <br/>
+        <li><span class="caret">KOHLER</span>
+            <ul class="nested">
+                <li class="done">Liquidacion / Facturacion</li>
+                <li class="done">Decimales en Liquidacion</li>
+                <li class="today">Factura - Formato PDF</li>
+            </ul>
+        </li>
 
+        <li><span class="caret">KOHLER</span>
+            <ul class="nested">
 
-        <li>GENERAL</li>
-        <ul>
-            <li>Borrar unidades de medida creadas por usuarios y estandarizar</li>
-            <li>Arreglar Componente en Product Design</li>
-            <li>Hacer modelo de unidades de medida suelto del ID de traze para integraciones con terceros</li>
-            <li>Borrar Allocation por partes</li>
-            <li>Arreglar modelo y performance de Core Shared Entities (vw_core_shared_measureUnits)</li>
-            <li>Quitar el modelo de appbus que ejecuta pre y post (es un enredo)</li>
-        </ul>
-        <br/>
+            </ul>
+        </li>
 
     </ul>
-    PERSONAL
-    <table>
-        <tr>
-            <td class="today">01. Cobrar Facturas Traze</td>
-        </tr>
-        <tr>
-            <td>02. Crear Empresa Colombia (Documento de creacion y estatutos)</td>
-        </tr>
-        <tr>
-            <td>03. Comprar Eliptica</td>
-        </tr>
-    </table>
+
+<!--    <ul id="myUL">-->
+
+
+<!--        <li>CAPIRO</li>-->
+<!--        <ul class="nested">-->
+<!--            <li class="today">Bug - WO. cuando hay permisos aplicados</li>-->
+<!--            <li>Bug - reallocation customer</li>-->
+<!--            <li>Bug - in production qty en trading transaction items</li>-->
+<!--            <li class="done">Bug - balances - solucion modelo generico de save para modificar solo algunos campos</li>-->
+<!--        </ul>-->
+
+<!--        <li>JOLO</li>-->
+<!--        <ul>-->
+<!--            <li class="today">Expiry date - digit to letter</li>-->
+<!--            <li class="today">En allocation tracking o allocation sources, poner un icono en workorder que abre y muestra el input de la vista de allocation sources de este</li>-->
+<!--            <li class="done">Bloquear usar producto que ya esta en pallet staging en input de WO.</li>-->
+<!--            <li class="today">Bug - filtros work orders (search by customer) y cuando aplica status, o cuando hay permisos aplicados</li>-->
+<!--            <li>Bug - Work order consumptions</li>-->
+<!--            <li>Arreglar References de product designs que estan en texto y no estan numericos</li>-->
+<!--        </ul>-->
+<!--        <br/>-->
+
+<!--        <li>DWF</li>-->
+<!--        <ul>-->
+<!--            <li>Apoyo, seguimiento, borrado, definicion productos y proceso compra.</li>-->
+<!--            <li>Market Place y solucion inner pack definitiva</li>-->
+<!--            <li>Revisar decimales en pdf PO inner pack</li>-->
+<!--        </ul>-->
+
+<!--        <li>AIR-SEA-TRANS</li>-->
+<!--        <ul>-->
+<!--            <li>Bug cargos carrier y agent</li>-->
+<!--        </ul>-->
+
+
+<!--        <li>KENDALL + OTHER CUSTOMERS</li>-->
+<!--        <ul>-->
+<!--            <li>Allocation automatico por partes en market place</li>-->
+<!--            <li>Completear work order en handling units (buckets)</li>-->
+<!--            <li>Reporte Balances de Flor</li>-->
+<!--        </ul>-->
+
+<!--        <li>KRUEGER</li>-->
+<!--        <ul>-->
+<!--            <li>Prototipos Mobile</li>-->
+<!--        </ul>-->
+
+<!--        <li>GENERAL</li>-->
+<!--        <ul>-->
+<!--            <li>Borrar unidades de medida creadas por usuarios y estandarizar</li>-->
+<!--            <li>Arreglar Componente en Product Design</li>-->
+<!--            <li>Hacer modelo de unidades de medida suelto del ID de traze para integraciones con terceros</li>-->
+<!--            <li>Borrar Allocation por partes</li>-->
+<!--            <li>Arreglar modelo y performance de Core Shared Entities (vw_core_shared_measureUnits)</li>-->
+<!--            <li>Quitar el modelo de appbus que ejecuta pre y post (es un enredo)</li>-->
+<!--        </ul>-->
+
+<!--    </ul>-->
+
+<!--    <ul>-->
+
+<!--    </ul>-->
+
+
+<!--    PERSONAL-->
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <td class="today">01. Cobrar Facturas Traze</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>02. Crear Empresa Colombia (Documento de creacion y estatutos)</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>03. Comprar Eliptica</td>-->
+<!--        </tr>-->
+<!--    </table>-->
+
+<!--    <p>TERMINADOS</p><br>-->
+
+    <script src="app.js">
+    </script>
 </body>
 <script type="application/javascript">
 
     let body = document.querySelector('body');
-
-    debugger;
 
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 
@@ -180,6 +243,20 @@
 
         // alert(newColorScheme);
     });
+
+    debugger;
+
+    let toggler = document.getElementsByClassName("caret");
+    let i;
+
+    for (i = 0; i < toggler.length; i++) {
+
+        toggler[i].addEventListener("click", (e) => {
+            let element = e.currentTarget.parentElement;
+            element.querySelector(".nested").classList.toggle("active");
+            this.classList.toggle("caret-down");
+        });
+    }
 
 </script>
 </html>
