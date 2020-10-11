@@ -12,19 +12,19 @@
 
     <style type="text/css">
 
-        /*li, td {*/
-        /*    color: darkgrey;*/
-        /*}*/
+        li, td {
+            color: darkgrey;
+        }
 
-        /*.done {*/
-        /*    text-decoration: line-through;*/
-        /*    color: gray;*/
-        /*}*/
+        .done {
+            text-decoration: line-through;
+            color: gray;
+        }
 
-        /*.today {*/
-        /*    font-weight: bolder;*/
-        /*    color: white;*/
-        /*}*/
+        .today {
+            font-weight: bolder;
+            color: white;
+        }
 
         /*Remove default bullets */
         ul, #myUL {
@@ -68,7 +68,6 @@
 
     </style>
 
-
 </head>
 <body style="padding: 20px;">
 
@@ -77,9 +76,11 @@
     <ul id="myUL">
         <li><span class="caret">TRUE GRADE</span>
             <ul class="nested">
-                <li class="today">Consecutives (con prefijos, y numeracion)</li>
-                <li class="today">Arreglar historia de POs e Items con FullNumber</li>
-                <li>Arreglar PO con problema de recibo</li>
+                <li>Tabla para quemar lots-storageUnits por performance</li>
+
+                <li>Arreglar POs con problema de recibo</li>
+
+                <li>Definir permisos para ver los dash board de entrada</li>
 
                 <li>Bug - No salva la compañia en vista de UI (validacion de duplicidad de nombres en grid)</li>
                 <li>Bug - Cuando se mete un campo nuevo en un search y este tiene una vista default, no lo esta mostrando en columns mgr.</li>
@@ -87,8 +88,7 @@
 
                 <li>El copiado de ordenes saca error por sequence global</li>
 
-                <li class="done">Bug - creacion inventario inbound en receiving (bloquear, obligar a meter pack, arreglar refresh en UI)</li>
-                <li>Tabla para quemar lots-storageUnits por performance</li>
+
                 <li>Solucionar fulfillment de shipment con nuevo modelo de activity en sources (fulfillShipmentItems) con Bayron</li>
 
                 <li>Extender funcionalidad del listing (Automatico)</li>
@@ -96,8 +96,11 @@
                 <li>Los Autocomplete usan queries de entidades, cuando uno no tiene permiso a esa entidad del autocomplete,
                     la va a dejar vacia asi exista, y no es la realidad</li>
 
+                <li class="done">Arreglar historia de POs e Items con FullNumber</li>
+                <li class="done">Consecutives (con prefijos, y numeracion)</li>
                 <li class="done">Arreglar vistas de inventario, storage y lots con costos bien calculados</li>
                 <li class="done">Bug - appCompanyId diferente a OwnerCompanyId en trading transactions</li>
+                <li class="done">Bug - creacion inventario inbound en receiving (bloquear, obligar a meter pack, arreglar refresh en UI)</li>
             </ul>
         </li>
 
@@ -115,92 +118,79 @@
             </ul>
         </li>
 
-        <li><span class="caret">KOHLER</span>
+        <li><span class="caret">CAPIRO</span>
             <ul class="nested">
+                <li>Bug - reallocation customer</li>
+                <li>Bug - in production qty en trading transaction items</li>
+                <li>Bug - Analysis - INTERNAL OPERATIONS / INTERNAL ORDERS TRACKING - quantity status malo</li>
+                <li>Incluir Allocation Sources de un ShipmentItems</li>
+                <li class="done">Bug - balances - solucion modelo generico de save para modificar solo algunos campos</li>
+                <li class="done">Bug - WO. cuando hay permisos aplicados</li>
+            </ul>
+        </li>
 
+        <li><span class="caret">JOLO</span>
+            <ul class="nested">
+                <li class="done">Expiry date - digit to letter</li>
+                <li class="today">En allocation tracking o allocation sources, poner un icono en workorder que abre y muestra el input de la vista de allocation sources de este</li>
+                <li class="done">Bloquear usar producto que ya esta en pallet staging en input de WO.</li>
+                <li class="today">Bug - filtros work orders (search by customer) y cuando aplica status, o cuando hay permisos aplicados</li>
+                <li>Bug - Work order consumptions</li>
+                <li>Arreglar References de product designs que estan en texto y no estan numericos</li>
+            </ul>
+        </li>
+
+        <li><span class="caret">DWF</span>
+            <ul class="nested">
+                <li>Apoyo, seguimiento, borrado, definicion productos y proceso compra.</li>
+                <li>Market Place y solucion inner pack definitiva</li>
+                <li>Revisar decimales en pdf PO inner pack</li>
+            </ul>
+        </li>
+
+        <li><span class="caret">AIR-SEA-TRANS</span>
+            <ul class="nested">
+                <li>Bug - Cargos carrier y agent</li>
+                <li>Bug - Notificaciones (Queue)</li>
+            </ul>
+        </li>
+
+        <li><span class="caret">KRUEGER</span>
+            <ul class="nested">
+                <li>Prototipos Mobile</li>
+            </ul>
+        </li>
+
+        <li><span class="caret">KENDALL + OTHER CUSTOMERS</span>
+            <ul class="nested">
+                <li>Allocation automatico por partes en market place</li>
+                <li>Completear work order en handling units (buckets)</li>
+                <li>Reporte Balances de Flor</li>
+            </ul>
+        </li>
+
+        <li><span class="caret">GENERAL</span>
+            <ul class="nested">
+                <li>Borrar unidades de medida creadas por usuarios y estandarizar</li>
+                <li>Arreglar Componente en Product Design</li>
+                <li>Hacer modelo de unidades de medida suelto del ID de traze para integraciones con terceros</li>
+                <li>Borrar Allocation por partes</li>
+                <li>Arreglar modelo y performance de Core Shared Entities (vw_core_shared_measureUnits)</li>
+                <li>Quitar el modelo de appbus que ejecuta pre y post (es un enredo)</li>
+            </ul>
+        </li>
+
+        <li><span class="caret">PERSONAL</span>
+            <ul class="nested">
+                <li>Cobrar Facturas Traze</li>
+                <li>Crear Empresa Colombia (Documento de creacion y estatutos)</li>
+                <li>Comprar Eliptica</li>
+                <li></li>
+                <li></li>
             </ul>
         </li>
 
     </ul>
-
-<!--    <ul id="myUL">-->
-
-
-<!--        <li>CAPIRO</li>-->
-<!--        <ul class="nested">-->
-<!--            <li class="today">Bug - WO. cuando hay permisos aplicados</li>-->
-<!--            <li>Bug - reallocation customer</li>-->
-<!--            <li>Bug - in production qty en trading transaction items</li>-->
-<!--            <li class="done">Bug - balances - solucion modelo generico de save para modificar solo algunos campos</li>-->
-<!--        </ul>-->
-
-<!--        <li>JOLO</li>-->
-<!--        <ul>-->
-<!--            <li class="today">Expiry date - digit to letter</li>-->
-<!--            <li class="today">En allocation tracking o allocation sources, poner un icono en workorder que abre y muestra el input de la vista de allocation sources de este</li>-->
-<!--            <li class="done">Bloquear usar producto que ya esta en pallet staging en input de WO.</li>-->
-<!--            <li class="today">Bug - filtros work orders (search by customer) y cuando aplica status, o cuando hay permisos aplicados</li>-->
-<!--            <li>Bug - Work order consumptions</li>-->
-<!--            <li>Arreglar References de product designs que estan en texto y no estan numericos</li>-->
-<!--        </ul>-->
-<!--        <br/>-->
-
-<!--        <li>DWF</li>-->
-<!--        <ul>-->
-<!--            <li>Apoyo, seguimiento, borrado, definicion productos y proceso compra.</li>-->
-<!--            <li>Market Place y solucion inner pack definitiva</li>-->
-<!--            <li>Revisar decimales en pdf PO inner pack</li>-->
-<!--        </ul>-->
-
-<!--        <li>AIR-SEA-TRANS</li>-->
-<!--        <ul>-->
-<!--            <li>Bug cargos carrier y agent</li>-->
-<!--        </ul>-->
-
-
-<!--        <li>KENDALL + OTHER CUSTOMERS</li>-->
-<!--        <ul>-->
-<!--            <li>Allocation automatico por partes en market place</li>-->
-<!--            <li>Completear work order en handling units (buckets)</li>-->
-<!--            <li>Reporte Balances de Flor</li>-->
-<!--        </ul>-->
-
-<!--        <li>KRUEGER</li>-->
-<!--        <ul>-->
-<!--            <li>Prototipos Mobile</li>-->
-<!--        </ul>-->
-
-<!--        <li>GENERAL</li>-->
-<!--        <ul>-->
-<!--            <li>Borrar unidades de medida creadas por usuarios y estandarizar</li>-->
-<!--            <li>Arreglar Componente en Product Design</li>-->
-<!--            <li>Hacer modelo de unidades de medida suelto del ID de traze para integraciones con terceros</li>-->
-<!--            <li>Borrar Allocation por partes</li>-->
-<!--            <li>Arreglar modelo y performance de Core Shared Entities (vw_core_shared_measureUnits)</li>-->
-<!--            <li>Quitar el modelo de appbus que ejecuta pre y post (es un enredo)</li>-->
-<!--        </ul>-->
-
-<!--    </ul>-->
-
-<!--    <ul>-->
-
-<!--    </ul>-->
-
-
-<!--    PERSONAL-->
-<!--    <table>-->
-<!--        <tr>-->
-<!--            <td class="today">01. Cobrar Facturas Traze</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td>02. Crear Empresa Colombia (Documento de creacion y estatutos)</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td>03. Comprar Eliptica</td>-->
-<!--        </tr>-->
-<!--    </table>-->
-
-<!--    <p>TERMINADOS</p><br>-->
 
     <script src="app.js">
     </script>
@@ -254,7 +244,7 @@
         toggler[i].addEventListener("click", (e) => {
             let element = e.currentTarget.parentElement;
             element.querySelector(".nested").classList.toggle("active");
-            this.classList.toggle("caret-down");
+            element.querySelector("span").classList.toggle("caret-down");
         });
     }
 
