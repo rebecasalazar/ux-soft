@@ -12,6 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "sqlite3": "^4.2.0",
-    "xlsx": "^0.16.0"
+    "xlsx": "^0.17.0"
   }
 }
